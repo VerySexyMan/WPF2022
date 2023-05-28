@@ -16,31 +16,32 @@ namespace Petzold.PaintTheButton
         }
         public PaintTheButton() 
         { 
-            Title = "Paint the Button"; 
-            // Create the Button as content of the  window.
+            Title = "Paint the Button";
+            // Создайте кнопку в качестве содержимого окна.
             Button btn = new Button();
             btn.HorizontalAlignment =  HorizontalAlignment.Center;
             btn.VerticalAlignment = VerticalAlignment.Center;
                 Content = btn;
-            // Create the Canvas as content of the  button. 
+            // Создайте холст в качестве содержимого кнопки.
             Canvas canv = new Canvas();
-            canv.Width = 144;
-            canv.Height = 144;
+            canv.Width = 144; // размеры
+            canv.Height = 144; // размеры
             btn.Content = canv;
-            // Create Rectangle as child of canvas.
+            // Создайте прямоугольник как дочерний элемент canvas.
             Rectangle rect = new Rectangle();
             rect.Width = canv.Width;
             rect.Height = canv.Height;
             rect.RadiusX = 24;
             rect.RadiusY = 24;
-            rect.Fill = Brushes.Blue;
+            rect.Fill = Brushes.Blue; // выбор цвета
             canv.Children.Add(rect);
-            Canvas.SetLeft(rect, 0);
+            Canvas.SetLeft(rect, 0); 
             Canvas.SetRight(rect, 0);
-            // Create Polygon as child of canvas.
+            // Создайте полигон как дочерний элемент canvas.
             Polygon poly = new Polygon();
-            poly.Fill = Brushes.Yellow;
+            poly.Fill = Brushes.Yellow; // цвет
             poly.Points = new PointCollection();
+            // оесуем звезду 
             for (int i = 0; i < 5; i++)
             {
                 double angle = i * 4 * Math.PI / 5;
